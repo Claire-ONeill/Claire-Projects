@@ -1,0 +1,189 @@
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Ellipse;
+import javafx.scene.shape.Line;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+public class ClickDistance extends Application
+{
+    private Line line;
+    private Text distanceText;
+    
+    //shows distance between click and origin 
+    public void start(Stage primaryStage)
+    {
+        line = new Line(75,155,75,155);
+        distanceText = new Text(150, 30, "Distance from Denny:  ??");
+      //clouds 
+      		Ellipse cloud = new Ellipse(60,50,35,25);
+      		cloud.setFill(Color.WHITE); 
+      		Ellipse cloud1 = new Ellipse (80,50,30,35);
+      		cloud1.setFill(Color.WHITE);	
+      		Ellipse cloud2 = new Ellipse (100,50,35,25); 
+      		cloud2.setFill(Color.WHITE);
+      		//cloud2
+      		Ellipse cloudA = new Ellipse(180,70,35,25);
+      		cloudA.setFill(Color.WHITE); 
+      		Ellipse cloudA1 = new Ellipse (200,70,30,35);
+      		cloudA1.setFill(Color.WHITE);	
+      		Ellipse cloudA2 = new Ellipse (220,70,35,25); 
+      		cloudA2.setFill(Color.WHITE);
+      		//cloud3
+      		Ellipse cloudB = new Ellipse(300,50,35,25);
+      		cloudB.setFill(Color.WHITE); 
+      		Ellipse cloudB1 = new Ellipse (320,50,30,35);
+      		cloudB1.setFill(Color.WHITE);	
+      		Ellipse cloudB2 = new Ellipse (340,50,35,25); 
+      		cloudB2.setFill(Color.WHITE);
+      		//cloud4
+      		Ellipse cloudC = new Ellipse(420,80,35,25);
+      		cloudC.setFill(Color.WHITE); 
+      		Ellipse cloudC1 = new Ellipse (440,80,30,35);
+      		cloudC1.setFill(Color.WHITE);	
+      		Ellipse cloudC2 = new Ellipse (460,80,35,25); 
+      		cloudC2.setFill(Color.WHITE);
+      		Group sky = new Group(
+      				//clouds 
+      				cloud,cloud1, cloud2, 
+      				cloudA, cloudA1, cloudA2, 
+      				cloudB, cloudB1, cloudB2, 
+      				cloudC, cloudC1, cloudC2);
+
+      	//ground 
+      	Rectangle rect = new Rectangle(0,250,500,100); 
+      	rect.setFill(Color.DARKGREEN); 
+      	Group ground = new Group(rect);
+     
+    	// Dinosaur shadow
+		Rectangle dinoHeadS = new Rectangle(33,152,60,40);
+		Rectangle dinoHeadS1 = new Rectangle(38,147,50,10); 
+		Rectangle dinoEyeS = new Rectangle(68,156,12,8);
+		dinoEyeS.setFill(Color.FLORALWHITE);
+		Rectangle dinoMouthS=new Rectangle(30,178,24,6); 
+		dinoMouthS.setFill(Color.CORNFLOWERBLUE);
+		Rectangle dinoMouthS1 = new Rectangle(30,178,8,18); 
+		dinoMouthS1.setFill(Color.CORNFLOWERBLUE);
+		Rectangle eyeBallS= new Rectangle (69,148,8,4);
+		Rectangle dinoNeckS = new Rectangle(63,165,30,60); 
+		Rectangle dinoArmS = new Rectangle(48,202,20,7);
+		Rectangle dinoHandS=new Rectangle(49,202,7,10);
+		Rectangle dinoBodyS = new Rectangle(63,183,35,40); 
+		Rectangle dinoBodyS1 = new Rectangle(68,188,35,40);
+		Rectangle dinoBodyS2 = new Rectangle(73,193,35,40);
+		Rectangle dinoBodyS3 = new Rectangle(78,198,35,40);
+		Rectangle dinoBodyS4 = new Rectangle(83,203,40,35);
+		Rectangle dinoLegSA = new Rectangle(78,222,6,30); 
+		Rectangle dinoLegSA1 = new Rectangle(83,222,6,25);
+		Rectangle dinoLegSA2 = new Rectangle(73,252,10,4); 
+		Rectangle dinoLegSB = new Rectangle(98,222,6,32); 
+		Rectangle dinoLegSB1 = new Rectangle(103,222,6,25);
+		Rectangle dinoLegSB2 = new Rectangle(93,252,8,4);
+		Rectangle dinoTailS = new Rectangle(88,209,45,28);
+		Rectangle dinoTailS1 = new Rectangle(128,207,10,25);
+		Rectangle dinoTailS2 = new Rectangle(136,202,10,25);
+		Rectangle dinoTailS3 = new Rectangle(145,190,6,32);
+	//DENNY the dinosaur 
+        
+    	//DENNY the dinosaur 
+    	//head
+    	Rectangle dinoHead = new Rectangle(30,150,60,40);
+    	dinoHead.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoHead1 = new Rectangle(35,145,50,10); 
+    	dinoHead1.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoEye = new Rectangle(68,156,12,8);
+    	dinoEye.setFill(Color.FLORALWHITE);
+    	Ellipse dinoNostril = new Ellipse(35,170,2,4); 
+    	Rectangle dinoMouth=new Rectangle(30,178,24,6); 
+    	dinoMouth.setFill(Color.CORNFLOWERBLUE);
+    	Rectangle dinoMouth1 = new Rectangle(30,178,8,18); 
+    	dinoMouth1.setFill(Color.CORNFLOWERBLUE);
+    	Rectangle eyeBall= new Rectangle (69,157,8,4);
+    	//neck +arms
+    	Rectangle dinoNeck = new Rectangle(60,165,30,60); 
+    	dinoNeck.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoArm = new Rectangle(45,200,20,7);
+    	dinoArm.setFill(Color.DARKSEAGREEN); 
+    	Rectangle dinoHand=new Rectangle(45,200,7,10);
+    	dinoHand.setFill(Color.DARKSEAGREEN);
+    	//body
+    	Rectangle dinoBody = new Rectangle(60,185,35,40); 
+    	dinoBody.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoBody1 = new Rectangle(65,190,35,40);
+    	dinoBody1.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoBody2 = new Rectangle(70,195,35,40);
+    	dinoBody2.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoBody3 = new Rectangle(75,200,35,40);
+    	dinoBody3.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoBody4 = new Rectangle(80,205,40,35);
+    	dinoBody4.setFill(Color.DARKSEAGREEN);
+    	//legs
+    	Rectangle dinoLegA = new Rectangle(75,220,6,30); 
+    	dinoLegA.setFill(Color.DARKSEAGREEN); 
+    	Rectangle dinoLegA1 = new Rectangle(80,220,6,25);
+    	dinoLegA1.setFill(Color.DARKSEAGREEN); 
+    	Rectangle dinoLegA2 = new Rectangle(70,250,10,4); 
+    	dinoLegA2.setFill(Color.DARKSEAGREEN); 
+    	Rectangle dinoLegB = new Rectangle(95,220,6,32); 
+    	dinoLegB.setFill(Color.DARKSEAGREEN); 
+    	Rectangle dinoLegB1 = new Rectangle(100,220,6,25);
+    	dinoLegB1.setFill(Color.DARKSEAGREEN); 
+    	Rectangle dinoLegB2 = new Rectangle(90,250,8,4);
+    	dinoLegB2.setFill(Color.DARKSEAGREEN); 
+    	//tail
+    	Rectangle dinoTail = new Rectangle(85,207,45,28);
+    	dinoTail.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoTail1 = new Rectangle(125,205,10,25);
+    	dinoTail1.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoTail2 = new Rectangle(133,200,10,25);
+    	dinoTail2.setFill(Color.DARKSEAGREEN);
+    	Rectangle dinoTail3 = new Rectangle(142,188,6,32);
+    	dinoTail3.setFill(Color.DARKSEAGREEN);
+    	Group Dinosaur = new Group(
+    			//shadow
+    			dinoHeadS,dinoHeadS1,dinoMouthS,dinoMouthS1,
+    			dinoEyeS, eyeBallS, dinoNeckS, dinoBodyS,dinoBodyS1,dinoBodyS2, dinoBodyS3, dinoBodyS4,
+    			dinoLegSA, dinoLegSA1,dinoLegSA2,dinoLegSB, dinoLegSB1, dinoLegSB2, 
+    			dinoArmS,dinoHandS, 
+    			dinoTailS,dinoTailS1, dinoTailS2, dinoTailS3,
+    			//body 
+    			dinoHead,dinoHead1,dinoMouth,dinoMouth1,
+    			dinoEye, eyeBall,dinoNostril, dinoNeck, dinoBody,dinoBody1,dinoBody2, dinoBody3, dinoBody4,
+    			dinoLegA, dinoLegA1,dinoLegA2,dinoLegB, dinoLegB1, dinoLegB2, 
+    			dinoArm,dinoHand, 
+    			dinoTail,dinoTail1, dinoTail2, dinoTail3); 
+        
+        Group root = new Group(sky,cloud,ground,line, Dinosaur,distanceText);
+        
+        Scene scene = new Scene(root, 400, 300, Color.CORNFLOWERBLUE);
+
+        scene.setOnMouseClicked(this::processMouseClick);
+
+        primaryStage.setTitle("Click Distance");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+    
+    public void processMouseClick(MouseEvent event)
+    {
+        double clickX = event.getX();
+        double clickY = event.getY();
+        
+        line.setEndX(clickX);
+        line.setEndY(clickY);
+        
+        double distance = Math.sqrt(clickX * clickX + clickY * clickY);
+        
+        String distanceStr = String.format("%.2f", distance);
+        distanceText.setText("Distance from Denny is:  " + distanceStr);
+    }
+
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
+}
